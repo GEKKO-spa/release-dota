@@ -2,7 +2,7 @@ podTemplate(containers: [
   containerTemplate(name: 'helm', image: 'alpine/helm:latest', command: 'cat', ttyEnabled: true)
   ], 
   envVars: [
-    podEnvVar(key:'CHART_NAME', value: 'chartmuseum/dotaki-score:0.1.1'), 
+    podEnvVar(key:'CHART_NAME', value: 'chartmuseum/dotaki-score-0.1.1'), 
     podEnvVar(key:'NAMESPACE', value: 'dev'), 
   ]) {
   node(POD_LABEL){

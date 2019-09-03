@@ -2,8 +2,8 @@ podTemplate(containers: [
   containerTemplate(name: 'helm', image: 'alpine/helm:latest', command: 'cat', ttyEnabled: true)
   ], 
   envVars: [
-    podEnvVar(key:'CHART_NAME', value: 'stable/prometheus'), 
-    podEnvVar(key:'NAMESPACE', value: 'admin'), 
+    podEnvVar(key:'CHART_NAME', value: 'chartmuseum/dotaki-score'), 
+    podEnvVar(key:'NAMESPACE', value: 'dev'), 
   ]) {
   node(POD_LABEL){
     def test = 'export ohhl'

@@ -22,6 +22,7 @@ podTemplate(containers: [
             cd release-dota
             helm init --client-only
             helm repo update
+            helm repo add chartmuseum http://chartmuseum-chartmuseum.admin.svc.cluster.local:8080
             helm install $CHART_NAME --namespace $NAMESPACE --name $BRANCH_NAME -f values.yaml  || helm upgrade $BRANCH_NAME $CHART_NAME -f values.yaml
             echo '######################## Deploy node-workers End #################################'
             '''
